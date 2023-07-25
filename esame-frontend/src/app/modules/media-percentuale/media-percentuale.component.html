@@ -1,0 +1,29 @@
+<p-table
+    [value]="data"
+    [paginator]="true"
+    [rows]="10"
+    [showCurrentPageReport]="true"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [rowsPerPageOptions]="[10, 25, 50]"
+>
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width:33,3%; text-align: center">anno</th>
+            <th style="width:33,3%; text-align: center">regione</th>
+            <th style="width:33,3%; text-align: center">media_percentuale</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-data>
+        <tr>
+            <td style="text-align: center">{{ data.anno }}</td>
+            <td style="text-align: center">{{ data.regione }}</td>
+            <td style="text-align: center">{{ data.media_percentuale}}</td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="paginatorleft">
+        <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+    </ng-template>
+    <ng-template pTemplate="paginatorright">
+        <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+    </ng-template>
+</p-table>
